@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TROLLMUZIK</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<h1>TROLLMUZIK</h1>
+<div style="text-align: center;">
+    <h2 style="color: red;">треки сниге</h2>
+</div>
+<div class="tracks">
+
+<div class="track">
+<img src="cover1.jpg" width="150">
+<h2>HIPER</h2>
+<audio controls>
+<source src="track1.mp3" type="audio/mpeg">
+</audio>
+</div>
+
+<div class="track">
+<img src="cover2.jpg" width="150">
+<h2>Название второго трека</h2> <!-- Исправлено: закрыт тег h2 -->
+<audio controls>
+<source src="track2.mp3" type="audio/mpeg">
+</audio>
+</div>
+
+<div class="track">
+<img src="cover3.jpg" width="150">
+<h2>balls angry</h2> <!-- Исправлено: закрыт тег h2 -->
+<audio controls>
+<source src="track3.mp3" type="audio/mpeg">
+</audio>
+</div>
+
+</div> <!-- Закрывающий тег для класса tracks -->
+
+<!-- Скрипт, который останавливает другие треки -->
+<script>
+const audios = document.querySelectorAll('audio');
+
+audios.forEach(audio => {
+    audio.addEventListener('play', () => {
+        audios.forEach(otherAudio => {
+            if (otherAudio !== audio) {
+                otherAudio.pause();
+            }
+        });
+    });
+});
+</script>
+
+</body>
+</html>
